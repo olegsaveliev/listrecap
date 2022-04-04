@@ -11,25 +11,31 @@ struct ContentView: View {
     
     var array = ["one","two","three","four"]
     @State var array1 = [String]()
+    @State var message = ""
     
     var body: some View {
         VStack{
             
             
+            
             List(array1, id: \.self) { item in
                 Text(item)
             }
-        
+            HStack{
+                Text(message)
+            
             Button("ADD") {
-                var ranEl = Int.random(in: 0...array.count-1)
-                let new = array1.append(array[ranEl])
-                    
-                    }
                 
-                  }
-                    
+                let ranEl = Int.random(in: 0...array.count-1)
+                array1.append(array[ranEl])
                 }
             }
+                
+        }
+                    
+    }
+    
+}
         
     
 
